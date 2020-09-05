@@ -54,7 +54,7 @@ public class CategoriaServiceImpl implements CategoriaService{
 		try {
 			Categoria entity = dao.findById(id).orElse(null);
 			if (entity == null) {
-				return error.error404("categoria");
+				return error.error404();
 			} else {
 				return ResponseEntity.status(200).body(entity);
 			}

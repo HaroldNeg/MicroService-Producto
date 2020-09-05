@@ -56,7 +56,7 @@ public class ProductoServiceImpl implements ProductoService{
 		try {
 			Producto entity = dao.findById(id).orElse(null);
 			if (entity == null) {
-				return error.error404("producto");
+				return error.error404();
 			} else {
 				return ResponseEntity.status(200).body(entity);
 			}

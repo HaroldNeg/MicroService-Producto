@@ -14,12 +14,12 @@ public class ErrorServiceImpl {
 		return ResponseEntity.status(400).body(error("Error en la petición", 400, e));
 	}
 	
-	public ResponseEntity<Error> error404(String entity){
-		return ResponseEntity.status(400).body(error("No se encontró registro de "+entity, 400, null));
+	public ResponseEntity<Error> error404(){
+		return ResponseEntity.status(404).body(error("No se encontró registros", 404, null));
 	}
 	
 	public ResponseEntity<Error> error500(Exception e){
-		return ResponseEntity.status(400).body(error("Error en el servidor", 500, e));
+		return ResponseEntity.status(500).body(error("Error en el servidor", 500, e));
 	}
 	
 	private Error error(String error, int status, Exception e) {
